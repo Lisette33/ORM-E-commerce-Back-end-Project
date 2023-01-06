@@ -13,7 +13,7 @@ Video URL:
 The application represents the creation of a back end pertaining to an e-commerce website. The application uses Express.js API with Sequelize  and MySQL. 
 
 ## Screenshot of Application
-![Object-Relational Mapping: E-Commerce Back End Project]()
+![Object-Relational Mapping: E-Commerce Back End Project](https://user-images.githubusercontent.com/113862182/210922095-20ebf94c-daa4-4fa1-9ca6-bfebeb5d172b.png)
 
 ## Project Guidelines stated as:
 
