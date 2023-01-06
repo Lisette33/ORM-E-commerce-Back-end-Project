@@ -7,7 +7,7 @@ Lisette Morales
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Walkthrough Video URL Link shows functionality of application: 
-Video URL: 
+Video URL: https://drive.google.com/file/d/1UDW_QBt7L-7ZW3kWY4XdLA1GTtFZCE8a/view
 
 ## Description
 The application represents the creation of a back end pertaining to an e-commerce website. The application uses Express.js API with Sequelize  and MySQL. 
