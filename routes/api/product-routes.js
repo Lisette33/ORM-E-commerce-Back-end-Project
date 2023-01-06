@@ -16,18 +16,31 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  Product.findOne(
+    {
+  where: {
+    id: req.params.id
+  },
+}
+).then((ProductData) => {
+  res.json(ProductData);
+});
 });
 
 // create new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
+  Product.bulkCreate([
     {
       product_name: "Basketball",
       price: 200.00,
       stock: 3,
       tagIds: [1, 2, 3, 4]
-    }
-  */
+    },
+  ]).then(() => {
+    res.send('Post Success!');
+  });
+  });
+  
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -48,7 +61,6 @@ router.post('/', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
-});
 
 // update product
 router.put('/:id', (req, res) => {
@@ -94,6 +106,16 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deleteProduct) => {
+      res.json(deleteProduct);
+    })
+    .catch((err) => res.json(err));
 });
+
 
 module.exports = router;
