@@ -29,17 +29,17 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
-  Product.bulkCreate([
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    },
-  ]).then(() => {
-    res.send('Post Success!');
-  });
-  });
+  // Product.bulkCreate([
+  //   {
+  //     product_name: "Basketball",
+  //     price: 200.00,
+  //     stock: 3,
+  //     tagIds: [1, 2, 3, 4]
+  //   },
+  // ]).then(() => {
+  //   res.send('Post Success!');
+  // });
+  // });
   
   Product.create(req.body)
     .then((product) => {
@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
-
+});
 // update product
 router.put('/:id', (req, res) => {
   // update product data
